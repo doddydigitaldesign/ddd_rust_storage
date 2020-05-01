@@ -1,8 +1,11 @@
+mod redux;
+
+pub use redux::{Middleware, ReducerFunction, Store, Subscriber};
 #[cfg(test)]
 mod tests {
-    use super::{Middleware, ReducerFunction, Store, Subscriber};
     #[test]
     fn it_works() {
+        use super::Store;
         #[derive(Eq, PartialEq, PartialOrd, Debug)]
         enum ActionType {
             Hello = 0,
@@ -57,7 +60,3 @@ mod tests {
         assert_eq!(2 + 2, 4);
     }
 }
-
-mod redux;
-
-pub use redux::{Middleware, ReducerFunction, Store, Subscriber};
